@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.mzs.cxpz.mapper.SjdxMapper">
+	<resultMap id="sjdxResult" type="Sjdx">
+		<result property="id" column="id" jdbcType="VARCHAR" />
+		<result property="createtime" column="createtime" jdbcType="TIMESTAMP" />
+		<result property="updatetime" column="updatetime" jdbcType="TIMESTAMP" />
+		<result property="yxx" column="yxx" jdbcType="VARCHAR" />
+		<result property="isdel" column="isdel" jdbcType="VARCHAR" />
+		<result property="px" column="px" jdbcType="DECIMAL" />
+		<result property="cjrxm" column="cjrxm" jdbcType="VARCHAR" />
+		<result property="cjrdm" column="cjrdm" jdbcType="VARCHAR" />
+		<result property="dxdm" column="dxdm" jdbcType="VARCHAR" />
+		<result property="dxmc" column="dxmc" jdbcType="VARCHAR" />
+		<result property="dxlx" column="dxlx" jdbcType="VARCHAR" />
+		<result property="sjk" column="sjk" jdbcType="VARCHAR" />
+		<result property="jtdx" column="jtdx" jdbcType="VARCHAR" />
+		<result property="zjzd" column="zjzd" jdbcType="VARCHAR" />
+		<result property="mrpx" column="mrpx" jdbcType="VARCHAR" />
+		<result property="qxzd" column="qxzd" jdbcType="VARCHAR" />
+		<result property="sfzsbj" column="sfzsbj" jdbcType="VARCHAR" />
+		<result property="sfzscxq" column="sfzscxq" jdbcType="VARCHAR" />
+		<result property="drsql" column="drsql" jdbcType="VARCHAR" />
+		<result property="gltj" column="gltj" jdbcType="VARCHAR" />
+		<result property="dxms" column="dxms" jdbcType="VARCHAR" />
+	</resultMap>
+     
+     
+	<!-- 新增记录  -->
+	<insert id="saveSjdx" parameterType="Sjdx" >
+	    <selectKey keyProperty="objectid" order="BEFORE" resultType="Long">
+		  select t_cxpz_sjdx_SEQ.NEXTVAL as objectid from dual 
+		</selectKey>
+        insert into t_cxpz_sjdx 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id!= null">
+                   id,
+			</if>
+			<if test="createtime!= null">
+                   createtime,
+			</if>
+			<if test="updatetime!= null">
+                   updatetime,
+			</if>
+			<if test="yxx!= null">
+                   yxx,
+			</if>
+			<if test="px!= null">
+                   px,
+			</if>
+			<if test="cjrxm!= null">
+                   cjrxm,
+			</if>
+			<if test="cjrdm!= null">
+                   cjrdm,
+			</if>
+			<if test="dxdm!= null">
+                   dxdm,
+			</if>
+			<if test="dxmc!= null">
+                   dxmc,
+			</if>
+			<if test="dxlx!= null">
+                   dxlx,
+			</if>
+			<if test="sjk!= null">
+                   sjk,
+			</if>
+			<if test="jtdx!= null">
+                   jtdx,
+			</if>
+			<if test="zjzd!= null">
+                   zjzd,
+			</if>
+			<if test="mrpx!= null">
+                   mrpx,
+			</if>
+			<if test="qxzd!= null">
+                   qxzd,
+			</if>
+			<if test="sfzsbj!= null">
+                   sfzsbj,
+			</if>
+			<if test="sfzscxq!= null">
+                   sfzscxq,
+			</if>
+			<if test="drsql!= null">
+                   drsql,
+			</if>
+			<if test="gltj!= null">
+                   gltj,
+			</if>
+			<if test="dxms!= null">
+                   dxms,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id!= null">           	
+                   #{id,jdbcType=VARCHAR},
+			</if>        
+			<if test="createtime!= null">           	
+                   #{createtime,jdbcType=TIMESTAMP},
+			</if>        
+			<if test="updatetime!= null">           	
+                   #{updatetime,jdbcType=TIMESTAMP},
+			</if>        
+			<if test="yxx!= null">           	
+                   #{yxx,jdbcType=VARCHAR},
+			</if>        
+			<if test="px!= null">           	
+                   #{px,jdbcType=DECIMAL},
+			</if>        
+			<if test="cjrxm!= null">           	
+                   #{cjrxm,jdbcType=VARCHAR},
+			</if>        
+			<if test="cjrdm!= null">           	
+                   #{cjrdm,jdbcType=VARCHAR},
+			</if>        
+			<if test="dxdm!= null">           	
+                   #{dxdm,jdbcType=VARCHAR},
+			</if>        
+			<if test="dxmc!= null">           	
+                   #{dxmc,jdbcType=VARCHAR},
+			</if>        
+			<if test="dxlx!= null">           	
+                   #{dxlx,jdbcType=VARCHAR},
+			</if>        
+			<if test="sjk!= null">           	
+                   #{sjk,jdbcType=VARCHAR},
+			</if>        
+			<if test="jtdx!= null">           	
+                   #{jtdx,jdbcType=VARCHAR},
+			</if>        
+			<if test="zjzd!= null">           	
+                   #{zjzd,jdbcType=VARCHAR},
+			</if>        
+			<if test="mrpx!= null">           	
+                   #{mrpx,jdbcType=VARCHAR},
+			</if>        
+			<if test="qxzd!= null">           	
+                   #{qxzd,jdbcType=VARCHAR},
+			</if>        
+			<if test="sfzsbj!= null">           	
+                   #{sfzsbj,jdbcType=VARCHAR},
+			</if>        
+			<if test="sfzscxq!= null">           	
+                   #{sfzscxq,jdbcType=VARCHAR},
+			</if>        
+			<if test="drsql!= null">           	
+                   #{drsql,jdbcType=VARCHAR},
+			</if>        
+			<if test="gltj!= null">           	
+                   #{gltj,jdbcType=VARCHAR},
+			</if>        
+			<if test="dxms!= null">           	
+                   #{dxms,jdbcType=VARCHAR},
+			</if>        
+		</trim>	   	
+	</insert>
+     
+     
+	<!-- 删除记录 -->
+	<!--<delete id="deleteSjdxById" parameterType="java.lang.String">
+        delete from t_cxpz_sjdx where 1=1      
+		<if test="objectid!=null">
+           and  objectid=#{objectid}
+		</if>
+		<if test="map.pks!=null">
+           and objectid in
+			<foreach collection="map.pks" item="id" open="(" separator="," close=")">
+             #{id}
+			</foreach>
+		</if>
+	</delete>-->
+
+	<!-- 删除记录 -->
+	<update id="deleteSjdxById" parameterType="java.lang.String">
+		update t_cxpz_sjdx t set t.isdel = '1' where t.id = #{id}
+	</update>
+     
+     
+	<!-- 修改记录 -->
+	<update id="updateSjdx" parameterType="Sjdx">
+        update t_cxpz_sjdx
+		<set>
+			<if test="id!= null">
+                 id = #{id,jdbcType=VARCHAR},
+			</if>			
+			<if test="createtime!= null">
+                 createtime = #{createtime,jdbcType=TIMESTAMP},
+			</if>			
+			<if test="updatetime!= null">
+                 updatetime = #{updatetime,jdbcType=TIMESTAMP},
+			</if>			
+			<if test="yxx!= null">
+                 yxx = #{yxx,jdbcType=VARCHAR},
+			</if>			
+			<if test="px!= null">
+                 px = #{px,jdbcType=DECIMAL},
+			</if>			
+			<if test="cjrxm!= null">
+                 cjrxm = #{cjrxm,jdbcType=VARCHAR},
+			</if>			
+			<if test="cjrdm!= null">
+                 cjrdm = #{cjrdm,jdbcType=VARCHAR},
+			</if>			
+			<if test="dxdm!= null">
+                 dxdm = #{dxdm,jdbcType=VARCHAR},
+			</if>			
+			<if test="dxmc!= null">
+                 dxmc = #{dxmc,jdbcType=VARCHAR},
+			</if>			
+			<if test="dxlx!= null">
+                 dxlx = #{dxlx,jdbcType=VARCHAR},
+			</if>			
+			<if test="sjk!= null">
+                 sjk = #{sjk,jdbcType=VARCHAR},
+			</if>			
+			<if test="jtdx!= null">
+                 jtdx = #{jtdx,jdbcType=VARCHAR},
+			</if>			
+			<if test="zjzd!= null">
+                 zjzd = #{zjzd,jdbcType=VARCHAR},
+			</if>			
+			<if test="mrpx!= null">
+                 mrpx = #{mrpx,jdbcType=VARCHAR},
+			</if>			
+			<if test="qxzd!= null">
+                 qxzd = #{qxzd,jdbcType=VARCHAR},
+			</if>			
+			<if test="sfzsbj!= null">
+                 sfzsbj = #{sfzsbj,jdbcType=VARCHAR},
+			</if>			
+			<if test="sfzscxq!= null">
+                 sfzscxq = #{sfzscxq,jdbcType=VARCHAR},
+			</if>			
+			<if test="drsql!= null">
+                 drsql = #{drsql,jdbcType=VARCHAR},
+			</if>			
+			<if test="gltj!= null">
+                 gltj = #{gltj,jdbcType=VARCHAR},
+			</if>			
+			<if test="dxms!= null">
+                 dxms = #{dxms,jdbcType=VARCHAR},
+			</if>			
+		</set>
+        where id = #{id}
+		    <!--<if test="objectid!=null">
+                 and  objectid=#{objectid}
+		    </if>
+		    <if test="map.pks!=null">
+                 and objectid in
+			     <foreach collection="map.pks" item="id" open="(" separator="," close=")">
+                  #{id}
+			     </foreach>
+		    </if>-->
+	</update>
+     
+     
+	<!-- 基础信息查询  -->
+	<select id="findSjdxById" parameterType="java.lang.String" resultType="Sjdx">
+           select * from t_cxpz_sjdx where isdel='0' id=#{id}
+	</select>
+      
+      
+	<!-- 基础列表查询 -->  
+	<select id="findSjdxList" parameterType="Sjdx" resultType="Sjdx">
+         select * from t_cxpz_sjdx where isdel = '0'
+	</select> 
+     
+     
+	<!-- 分页查询列表 -->
+	<select id="findSjdxPage" parameterType="Sjdx" resultType="Sjdx">
+	SELECT * FROM
+	   (
+		   SELECT A.*, ROWNUM RN
+		   FROM (SELECT * FROM t_cxpz_sjdx) A
+		   WHERE ROWNUM  <![CDATA[ 	<= ]]>#{map.startIndex}
+	   )
+	   WHERE RN <![CDATA[ >= ]]>#{map.pageSize}
+	</select>
+     
+     
+	<!-- 查询总条数 -->
+	<select id="findSjdxCount" parameterType="Sjdx" resultType="Integer">
+     	select count(1) from t_cxpz_sjdx where 1=1 
+	</select>
+     
+     	     
+</mapper>	
